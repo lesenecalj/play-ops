@@ -23,7 +23,7 @@ public class GameParamsController {
 
     @PutMapping("/params")
     public ResponseEntity<GameParams> update(@Valid @RequestBody UpdateGameParamsRequest req) {
-        GameParams updated = gameParamsService.updateXpMultiplier(req.getXpMultiplier());
+        GameParams updated = gameParamsService.updateXpMultiplier(req.xpMultiplier());
         return ResponseEntity.ok(updated);
     }
 }
