@@ -31,8 +31,8 @@ public class StoreController {
 
     @PutMapping("/items/{id}")
     public ResponseEntity<StoreItem> update(@PathVariable("id") UUID id, @Valid @RequestBody UpdateItemRequest req) {
-        StoreItem item = storeService.update(id, req.name(), req.price());
-        return ResponseEntity.ok(item);
+        StoreItem itemUpdated = storeService.update(id, req.name(), req.price());
+        return ResponseEntity.ok(itemUpdated);
     }
 
     @DeleteMapping("/items/{id}")
